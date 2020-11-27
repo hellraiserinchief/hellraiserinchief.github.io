@@ -144,11 +144,11 @@ But it fails on the BeagleBone Black. I seriously suspect that the SD card reade
 
 
 Sources:  
-https://nmglug.org/beaglebone-black-recovery/
-https://www.reddit.com/r/BeagleBone/comments/1qe8zt/tutorial_beaglebone_black_how_to_boot_from_the/
-https://www.reddit.com/r/BeagleBone/comments/6b1gib/did_i_just_brick_my_beaglebone_black/
-https://www.element14.com/community/thread/54521/l/boot-bbb-from-usb0
-https://processors.wiki.ti.com/index.php/AM335x_board_bringup_tips
-http://ungureanuvladvictor.github.io/BBBlfs/
-https://elinux.org/images/b/b2/Netconsole.pdf
+(https://nmglug.org/beaglebone-black-recovery/)
+(https://www.reddit.com/r/BeagleBone/comments/1qe8zt/tutorial_beaglebone_black_how_to_boot_from_the/)
+(https://www.reddit.com/r/BeagleBone/comments/6b1gib/did_i_just_brick_my_beaglebone_black/)
+(https://www.element14.com/community/thread/54521/l/boot-bbb-from-usb0)
+(https://processors.wiki.ti.com/index.php/AM335x_board_bringup_tips)
+(http://ungureanuvladvictor.github.io/BBBlfs/)
+(https://elinux.org/images/b/b2/Netconsole.pdf)
 
