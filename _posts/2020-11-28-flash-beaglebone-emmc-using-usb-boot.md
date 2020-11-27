@@ -14,20 +14,41 @@ I went through the steps in [getting started page](https://beagleboard.org/getti
 
 I connected an 3.3V FTDI USB to TTL cable to the serial debugger port of my BBB (https://elinux.org/Beagleboard:BeagleBone_Black_Serial). Started minicom in a terminal and booted my BBB using SD Card. This is what I saw:
 ```
-[ 2407.629902] print_req_error: I/O error, dev mmcblk0, sector 0
-[ 2407.661558] print_req_error: I/O error, dev mmcblk0, sector 1
-[ 2407.695584] print_req_error: I/O error, dev mmcblk0, sector 2
-[ 2407.729435] print_req_error: I/O error, dev mmcblk0, sector 3
-[ 2407.763374] print_req_error: I/O error, dev mmcblk0, sector 4
-[ 2407.773240] print_req_error: I/O error, dev mmcblk0, sector 5
-[ 2407.779552] print_req_error: I/O error, dev mmcblk0, sector 6
-[ 2407.814017] print_req_error: I/O error, dev mmcblk0, sector 7
-[ 2407.819861] Buffer I/O error on dev mmcblk0, logical block 0, async page read
-[ 2407.880598] print_req_error: I/O error, dev mmcblk0, sector 0
-[ 2407.914496] print_req_error: I/O error, dev mmcblk0, sector 1
-[ 2408.088370] Buffer I/O error on dev mmcblk0, logical block 0, async page read
-[ 2408.320663] Buffer I/O error on dev mmcblk0, logical block 0, async page read
-[ 2408.733474] Buffer I/O error on dev mmcblk0, logical block 1940464, async page read
+Starting kernel ...
+
+[    0.002164] timer_probe: no matching timers found
+[    0.195902] l4_wkup_cm:clk:0010:0: failed to disable
+[    1.120967] print_req_error: I/O error, dev mmcblk0, sector 0
+[    1.127517] print_req_error: I/O error, dev mmcblk0, sector 1
+[    1.158014] print_req_error: I/O error, dev mmcblk0, sector 2
+[    1.188535] print_req_error: I/O error, dev mmcblk0, sector 3
+[    1.219067] print_req_error: I/O error, dev mmcblk0, sector 4
+[    1.249651] print_req_error: I/O error, dev mmcblk0, sector 5
+[    1.280234] print_req_error: I/O error, dev mmcblk0, sector 6
+[    1.310799] print_req_error: I/O error, dev mmcblk0, sector 7
+[    1.316622] Buffer I/O error on dev mmcblk0, logical block 0, async page read
+[    1.325755] print_req_error: I/O error, dev mmcblk0, sector 0
+[    1.332361] print_req_error: I/O error, dev mmcblk0, sector 1
+[    1.438172] Buffer I/O error on dev mmcblk0, logical block 0, async page read
+[    1.619791] Buffer I/O error on dev mmcblk0, logical block 0, async page read
+[    1.883795] omap_voltage_late_init: Voltage driver support not added
+[    5.675565] Buffer I/O error on dev mmcblk0, logical block 3911408, async page read
+[    8.809855] print_req_error: I/O error, dev mmcblk0, sector 31291264
+[    8.841077] print_req_error: I/O error, dev mmcblk0, sector 31291265
+[    8.872191] print_req_error: I/O error, dev mmcblk0, sector 31291266
+[    8.879262] print_req_error: I/O error, dev mmcblk0, sector 31291267
+[    8.886313] print_req_error: I/O error, dev mmcblk0, sector 31291268
+[    8.917389] print_req_error: I/O error, dev mmcblk0, sector 31291269
+[    8.924434] print_req_error: I/O error, dev mmcblk0, sector 31291270
+[    8.955506] print_req_error: I/O error, dev mmcblk0, sector 31291271
+[    9.011661] print_req_error: I/O error, dev mmcblk0, sector 31291264
+[    9.018756] print_req_error: I/O error, dev mmcblk0, sector 31291265
+[    9.076675] Buffer I/O error on dev mmcblk0, logical block 3911408, async page read
+Gave up waiting for root file system device.  Common problems:
+ - Boot args (cat /proc/cmdline)
+   - Check rootdelay= (did the system wait long enough?)
+ - Missing modules (cat /proc/modules; ls /dev)
+ALERT!  /dev/mmcblk0p1 does not exist.  Dropping to a shell!
 ```
 Booting with internal eMMC was also of no use. I tried several images and several SD cards, nothing worked. So, I needed another way to boot up my BBB. A great source for imformation regarding BBB is obviously the [System Reference Manual](https://github.com/beagleboard/beaglebone-black/wiki/System-Reference-Manual). But it said `Software to support USB and serial boot modes is not provided by beagleboard.org. Please contact TI for support of this feature.`, which thankfully turned out to be incorrect. There have been 2 GSoCs to tackle the issue of flashing the onboard eMMC over USB:
 1. In 2013, which resulted in [BBBlfs](https://github.com/ungureanuvladvictor/BBBlfs)
