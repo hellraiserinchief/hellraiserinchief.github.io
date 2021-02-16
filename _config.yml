@@ -19,12 +19,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hello World! Its all about code, computers, robots and digital fabrication.
 twitter_username: kaustubht08
 github_username: hellraiserinchief
-minimal_mistakes_skin: default
+minimal_mistakes_skin: default #"default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+
 search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.19.1
+remote_theme: mmistakes/minimal-mistakes@4.22.0
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -103,3 +104,11 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+repository: hellraiserinchief/hellraiserinchief.github.io
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
+
